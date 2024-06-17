@@ -1,0 +1,54 @@
+conky.config = {
+	-------------------------------------
+	--  Generic Settings
+	-------------------------------------
+	background=true,
+	update_interval=1,
+	double_buffer=true,
+	no_buffers=true,
+	imlib_cache_size=10,
+
+	draw_shades=false,
+	draw_outline=false,
+	draw_borders=false,
+
+	-------------------------------------
+	--  Window Specifications
+	-------------------------------------
+	gap_x=400,
+	gap_y=300,
+
+	alignment="top_left",
+
+	minimum_height=1280,
+	minimum_width=1960,
+
+	own_window=true,
+	own_window_type="override",
+	own_window_transparent=true,
+	own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+
+	own_window_argb_visual=true,
+	own_window_argb_value=0,
+
+	-------------------------------------
+	--  Text Settings
+	-------------------------------------
+	use_xft=true,
+	xftalpha=1,
+	font="Droid Sans:size=10",
+	text_buffer_size=256,
+	override_utf8_locale=true,
+
+	-------------------------------------
+	--  Color Scheme
+	-------------------------------------
+	default_color ='FFD700',
+	color0='000000', -- default
+	color1='FFD700', -- date
+}
+
+conky.text = [[
+	${color0}${font Autography:pixelsize=200}${time %H:%M}${font}
+  ${color1}${offset 70}${font Autography:pixelsize=150}${time %d}${font}${voffset -70}${offset 20}${font Autography:pixelsize=80}${time %B}${voffset 50}${offset -40}${time %Y}${font}
+]]

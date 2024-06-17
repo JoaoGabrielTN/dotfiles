@@ -22,6 +22,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
+  "sh", "-c", "/home/hyades/.config/dwm-6.5/scripts/status.sh", NULL,
   "sh", "-c", "/home/hyades/.config/dwm-6.5/scripts/dyn-wall.sh", NULL,
   "conky", NULL,
 	"picom", NULL,
