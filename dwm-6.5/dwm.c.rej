@@ -1,0 +1,19 @@
+--- dwm.c
++++ dwm.c
+@@ -1362,6 +1475,16 @@ propertynotify(XEvent *e)
+ void
+ quit(const Arg *arg)
+ {
++	// fix: reloading dwm keeps all the hidden clients hidden
++	Monitor *m;
++	Client *c;
++	for (m = mons; m; m = m->next) {
++		if (m) {
++			for (c = m->stack; c; c = c->next)
++				if (c && HIDDEN(c)) showwin(c);
++		}
++	}
++
+ 	running = 0;
+ }
+ 
